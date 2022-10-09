@@ -59,10 +59,19 @@ div.pokemon {
     
 }
 
+p {
+    margin: 0px;
+}
+
+.img-pokemon {
+    grid-column: 1;
+    grid-row: 1/3;
+}
+
 #div-pokemons {
     border-radius: 10px;
     margin: 0px 25px 100px 25px;
-    
+    overflow: hidden;
 }
 
 #div-pokemons:hover {
@@ -75,6 +84,8 @@ div.pokemon {
     text-align: center;
     color: white;
     font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.411);
+    margin-bottom: 0px;
 }
 
 .bulbassauro {
@@ -89,3 +100,10 @@ div.pokemon {
 .squirtle {
     background-color: rgb(42, 165, 159);
 }
+
+.link-pokemon {
+    display: block;
+    margin: auto;
+}
+
+
