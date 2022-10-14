@@ -16,25 +16,42 @@
         <div class="pokemon">
             <div class="squirtle">
                 <img src="../imgs/squirtle.png" alt="">
-                <p class="num">Número: 001</p>
+                <p id="numero">Número: </p>
                 <p>Tipo: <strong class="tipo-grama"> Grama </strong> <strong class="tipo-veneno"> Veneno </strong> </p>
                 <p class="atributos">Atributos base</p>
-                <p>Pontos de vida: 45</p>
-                <p>Ataque: 49</p>
-                <p>Defesa: 49</p>
-                <p>Ataque especial: 65</p>
-                <p>Defesa especial: 65</p>
-                <p>Velocidade: 45</p>
-                <p>Total: 318</p>
-
+                <p id="hp">Pontos de vida: </p>
+                <p id="atk">Ataque: </p>
+                <p id="def">Defesa: </p>
+                <p id="spl-atk">Ataque especial: </p>
+                <p id="spl-def">Defesa especial: </p>
+                <p id="spd">Velocidade: </p>
+                <p id="total">Total: </p>
+                <p id="oi">OI </p>
                 
             </div>
-
         </div>
-
     </main>
     <footer>
 
     </footer>
+    <script>
+        var nome = document.getElementById('ipesquisa');
+        document.getElementById('oi').innerText = `${nome}`;
+        async function getPoke() {
+            const url = `https://pokeapi.co/api/v2/pokemon/squirtle`;
+            const response = await fetch(url);
+            const pokemon = await response.json();
+            document.getElementById('numero').innerHTML += pokemon['id'];
+            document.getElementById('hp').innerHTML += pokemon['stats'][0]['base_stat'];
+            document.getElementById('atk').innerHTML += pokemon['stats'][1]['base_stat'];
+            document.getElementById('def').innerHTML += pokemon['stats'][2]['base_stat'];
+            document.getElementById('spl-atk').innerHTML += pokemon['stats'][3]['base_stat'];
+            document.getElementById('spl-def').innerHTML += pokemon['stats'][4]['base_stat'];
+            document.getElementById('spd').innerHTML += pokemon['stats'][5]['base_stat'];
+
+            document.getElementById('total').innerHTML += ((pokemon['stats'][0]['base_stat']) + (pokemon['stats'][1]['base_stat']) + (pokemon['stats'][2]['base_stat']) + (pokemon['stats'][3]['base_stat']) + (pokemon['stats'][4]['base_stat']) + (pokemon['stats'][5]['base_stat'])) // soma todos os pontos de atributos
+    }
+    getPoke();
+    </script>
 </body>
 </html>
