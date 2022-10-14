@@ -1,7 +1,17 @@
 async function getPoke() {
-    const url = `https://pokeapi.co/api/v2/pokemon/bulbasaur`;
+    //extrai o nome do pokemon baseado na url
+    const urlPoke = window.location.pathname;
+    const arrayPoke = urlPoke.split('/');
+    const htmlPoke = arrayPoke[2];
+    const splitNomePoke = htmlPoke.split('.');
+    const nomePoke = splitNomePoke[0];
+    //console.log(nomePoke)
+    // extrai o nome do pokemon baseado na url
+    const url = `https://pokeapi.co/api/v2/pokemon/${nomePoke}`;
     const response = await fetch(url);
     const pokemon = await response.json();
+    console.log(pokemon)
+    document.getElementById('nome-pokemon').innerHTML = pokemon['name']
     document.getElementById('numero').innerHTML += pokemon['id'];
     document.getElementById('hp').innerHTML += pokemon['stats'][0]['base_stat'];
     document.getElementById('atk').innerHTML += pokemon['stats'][1]['base_stat'];

@@ -5,33 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/bulba.css">
-    <title>Document</title>
+    <script src="../scripts/getPokemons.js"></script>
+    <title>Charmander</title>
+    <style>
+        strong {
+            background-color: red;
+            padding: 0px 3px 0px 3px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>charmander</h1>
+        <h1 id="nome-pokemon"></h1>
         <a href="../index.html">Início</a>
     </header>
     <main>
         <div class="pokemon">
             <div class="charmander">
                 <img src="../imgs/charmander.png" alt="">
-                <p class="num">Número: 001</p>
-                <p>Tipo: <strong class="tipo-grama"> Grama </strong> <strong class="tipo-veneno"> Veneno </strong> </p>
+                <p id="numero">Número: </p>
+                <p>Tipo: <strong class="tipo-fogo"> Fogo </strong> </p>
                 <p class="atributos">Atributos base</p>
-                <p>Pontos de vida: 45</p>
-                <p>Ataque: 49</p>
-                <p>Defesa: 49</p>
-                <p>Ataque especial: 65</p>
-                <p>Defesa especial: 65</p>
-                <p>Velocidade: 45</p>
-                <p>Total: 318</p>
-
-                
+                <p id="hp">Pontos de vida: </p>
+                <p id="atk">Ataque: </p>
+                <p id="def">Defesa: </p>
+                <p id="spl-atk">Ataque especial: </p>
+                <p id="spl-def">Defesa especial: </p>
+                <p id="spd">Velocidade: </p>
+                <p id="total">Total: </p>
             </div>
-
         </div>
-
     </main>
     <footer>
 
