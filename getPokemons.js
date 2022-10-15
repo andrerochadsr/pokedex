@@ -1,10 +1,15 @@
 async function getPoke() {
     //extrai o nome do pokemon baseado na url
     const urlPoke = window.location.pathname;
+    console.log(urlPoke)
     const arrayPoke = urlPoke.split('/');
-    const htmlPoke = arrayPoke[2];
+    
+    const htmlPoke = arrayPoke[1];
+    
     const splitNomePoke = htmlPoke.split('.');
+    
     const nomePoke = splitNomePoke[0];
+    
     //console.log(nomePoke)
     // extrai o nome do pokemon baseado na url
     const url = `https://pokeapi.co/api/v2/pokemon/${nomePoke}`;
