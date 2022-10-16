@@ -1,16 +1,20 @@
 async function getPoke() {
     //extrai o nome do pokemon baseado na url
     const urlPoke = window.location.pathname;
+    console.log(urlPoke)
     const arrayPoke = urlPoke.split('/');
+    console.log(arrayPoke)
     const htmlPoke = arrayPoke[1];
+    console.log(htmlPoke)
     const splitNomePoke = htmlPoke.split('.');
+    console.log(splitNomePoke)
     const nomePoke = splitNomePoke[1];
     console.log(nomePoke)
     // extrai o nome do pokemon baseado na url
     const url = `https://pokeapi.co/api/v2/pokemon/${nomePoke}`;
     const response = await fetch(url);
     const pokemon = await response.json();
-    //console.log(pokemon)
+    console.log(pokemon)
     document.getElementById('nome-pokemon').innerHTML = pokemon['name']
     document.getElementById('numero').innerHTML += pokemon['id'];
     document.getElementById('hp').innerHTML += pokemon['stats'][0]['base_stat'];
