@@ -20,16 +20,6 @@
             <input type="button" value="Pesquisar" class="botao-pesquisa" onclick="search()">
             <div id="resp"></div>
             <div class="pokemon">
-
-                <div class="mewtwo" id="div-pokemons">
-                    <img src="imgs/mewtwo.png" class="img-pokemon"><a href="#" class="link-pokemon" id="link-mewtwo">
-                        <p>Mewtwo</p>
-                        <p id="hp-mewtwo">HP: </p>
-                        <p id="atk-mewtwo">Ataque: </p>
-                        <p id="def-mewtwo">Defesa: </p>
-                    </a>
-                </div>
-
                 <div class="bulbassauro" id="div-pokemons">
                     <img src="imgs/bulbassauro.png" class="img-pokemon"><a href="bulbasaur.html" class="link-pokemon"><p>Bulbassauro</p></a>
                 </div>
@@ -45,22 +35,10 @@
                 <div class="pikachu" id="div-pokemons">
                     <img src="imgs/pikachu.png" class="img-pokemon"><a href="pikachu.html" class="link-pokemon"><p>Pikachu</p></a>
                 </div>
-
             </div>
         </section>
     </main>
     <footer>
     </footer>
 </body>
-<script>
-    async function getPoke() {
-        const url = `https://pokeapi.co/api/v2/pokemon/mewtwo`;
-        const response = await fetch(url);
-        const pokemon = await response.json();
-        document.getElementById('hp-mewtwo').innerHTML += pokemon['stats'][0]['base_stat'];
-        document.getElementById('atk-mewtwo').innerHTML += pokemon['stats'][1]['base_stat'];
-        document.getElementById('def-mewtwo').innerHTML += pokemon['stats'][2]['base_stat'];
-    }
-    getPoke();
-</script>
 </html>
