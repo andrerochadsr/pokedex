@@ -27,16 +27,13 @@
                 <div class="squirtle" id="div-pokemons">
                     <img src="imgs/squirtle.png" class="img-pokemon"><input type="button" value="Squirtle" id="botao-pokemons" onclick="page_poke(`squirtle`)">
                 </div>
-                <div class="pikachu" id="div-pokemons">
-                    <img src="imgs/25.png" class="img-pokemon"><input type="button" value="Pikachu" id="botao-pokemons" onclick="page_poke(`pikachu`)">
-                </div>
             </div>
         </section>
     </main>
 </body>
 <script>
     function page_poke(pokemon) {
-        sessionStorage.setItem('pokemon', `"${pokemon}"`);
+        localStorage.setItem('pokemon', `"${pokemon}"`);
         window.location.href = `pokemon.html`;
     }
 </script>

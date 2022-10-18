@@ -10,7 +10,7 @@ async function search(){
     if (lista_pokemons.includes(nome)) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
         const pokemon = await response.json()
-        sessionStorage.setItem('pokemon', JSON.stringify(pokemon['name']))
+        localStorage.setItem('pokemon', JSON.stringify(pokemon['name']))
         //console.log(pokemon)
         window.location.href = `pokemon.html`;
     } else {
