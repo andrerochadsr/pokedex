@@ -1,10 +1,9 @@
 const pokemon = localStorage.getItem('pokemon');
-console.log(pokemon)
 const nomeAspas = pokemon.split('"');
 const nomePoke = nomeAspas[1];
 console.log(nomePoke)
 async function getPoke(nome) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${nomePoke}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${nome}`;
     const response = await fetch(url);
     const pokemon = await response.json();
     console.log(pokemon)
