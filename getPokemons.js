@@ -1,12 +1,10 @@
 const pokemon = localStorage.getItem('pokemon');
 const nomeAspas = pokemon.split('"');
 const nomePoke = nomeAspas[1];
-console.log(nomePoke)
 async function getPoke(nome) {
     const url = `https://pokeapi.co/api/v2/pokemon/${nome}`;
     const response = await fetch(url);
     const pokemon = await response.json();
-    console.log(pokemon)
     document.getElementById('head').innerHTML += `<link rel="icon" type="image/png" href=${pokemon['sprites']['front_default']}>`
     document.getElementById('title').innerHTML = pokemon['name'].toUpperCase();
     document.querySelector('#img-poke').innerHTML += `<img src="${pokemon['sprites']['front_default']}" class="img-poke">`;
