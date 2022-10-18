@@ -1,11 +1,20 @@
-function search(){
-    let lista_pokemons = ["bulbasaur", "squirtle", "charmander"];
+async function search(){
+    let lista_pokemons = [];
+    for (let i = 1; i<=150; i++) {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+        const pokemon = await response.json()
+        lista_pokemons.push(pokemon['name'])
+    }
     let nome_page = window.document.getElementById('ipesquisa');
     let nome = nome_page.value;
-    //teste.innerText = `teste ${lista_pokemons.includes(nome)}`
     if (lista_pokemons.includes(nome)) {
-        window.location.href = `${nome.trim()}.html`
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
+        const pokemon = await response.json()
+        sessionStorage.setItem('pokemon', JSON.stringify(pokemon['name']))
+        //console.log(pokemon)
+        window.location.href = `pokemon.html`;
     } else {
-        resp.innerText = 'ERRO'
+        retorno.innerText = 'ERRO! Nome incorreto.';
+        console.log('erro')
     };
 }
