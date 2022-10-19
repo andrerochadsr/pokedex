@@ -1,7 +1,7 @@
 async function search(){
     const listaPokesJuntos = sessionStorage.getItem('listaPokemons')
     const listaPokes = listaPokesJuntos.split(',')
-    const valor = window.document.getElementById('ipesquisa').value;
+    const valor = window.document.getElementById('ipesquisa').value.trim();
     if (valor >= 1 && valor <= 898) {
         const id = parseInt(valor);
         localStorage.setItem('pokemon', `"${id}"`)
