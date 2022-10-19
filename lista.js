@@ -6,7 +6,6 @@ async function lista() {
         const pokemon = await response.json();
         listaPokemons.push(pokemon['name']);
     }
-    
     sessionStorage.setItem('listaPokemons', listaPokemons);
 }
 lista();
