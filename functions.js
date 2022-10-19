@@ -1,16 +1,17 @@
-async function search(){
+function search(){
     const listaPokesJuntos = sessionStorage.getItem('listaPokemons')
     const listaPokes = listaPokesJuntos.split(',')
     const valor = window.document.getElementById('ipesquisa').value.trim();
-    //const id = parseInt(valor);
-    //if (id >= 1 && id <= 898) {
-   //     localStorage.setItem('pokemon', `"${id}"`)
-     //   window.location.href = `pokemon.html`;
-    /*else*/ if (listaPokes.includes(valor)) {
-            const nome = valor
-            localStorage.setItem('pokemon', `"${nome}"`)
-            window.location.href = `pokemon.html`;
+    if (listaPokes.includes(valor)) {
+        alert('Nome')
+        localStorage.setItem('pokemon', `"${valor}"`);
+        window.location.href = `pokemon.html`;
+        
+    } else if (valor >= 1 && valor <= 898) {
+        alert('Numero')
+        localStorage.setItem('pokemon', `"${valor}"`);
+        window.location.href = `pokemon.html`;
     } else {
-        retorno.innerText = 'ERRO! Nome ou número incorreto.';
+        alert('ERRO! Nome ou ID incorretos.')
     }
 }
