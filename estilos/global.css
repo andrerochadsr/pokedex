@@ -46,6 +46,10 @@ header > h1 {
     outline-style: solid;
 }
 
+.txt-help {
+    text-align: center;
+}
+
 div.pokemon {
     margin-top: 50px;
     display: flex;

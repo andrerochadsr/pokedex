@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="estilos/global.css">
     <script src="functions.js"></script>
     <script src="lista.js"></script>
+    <script src="pagePokes.js"></script>
     <title>PokeDex</title>
 </head>
 <body>
@@ -16,7 +17,9 @@
     <main class="container-pokes-inicio">
         <section>
             <input type="text" name="pesquisa" id="ipesquisa" class="barra-pesquisa">
+            <div class="txt-help"><p>Pesquise pelo nome ou digite um número de 1 a 898.</p></div>
             <input type="button" value="Pesquisar" class="botao-pesquisa" onclick="search()" onclick="lista()">
+            
             <div id="retorno"></div>
             <div class="pokemon">
                 <div class="bulbassauro" id="div-pokemons">
@@ -32,12 +35,4 @@
         </section>
     </main>
 </body>
-<script>
-    function page_poke(pokemon) {
-        localStorage.setItem('pokemon', `"${pokemon}"`);
-        window.location.href = `pokemon.html`;
-    }
-    lista();
-</script>
-
 </html>
