@@ -60,6 +60,11 @@ a:hover {
     margin-top: 50px;
 }
 
+#img-poke {
+    display: flex;
+    justify-content: center;
+}
+
 
 
 
