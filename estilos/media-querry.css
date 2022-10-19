@@ -1,7 +1,0 @@
-@charset "UTF-8";
-@media screen and (max-height:750px) {
-    section {
-        font-size: 1em;
-        width: 150px;
-    }
-}
