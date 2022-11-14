@@ -1,5 +1,5 @@
 function search(){
-    const listaPokesJuntos = sessionStorage.getItem('listaPokemons')
+    const listaPokesJuntos = localStorage.getItem('listaPokemons')
     const listaPokes = listaPokesJuntos.split(',')
     const valor = window.document.getElementById('ipesquisa').value.trim().toLowerCase();
     if (listaPokes.includes(valor)) {
