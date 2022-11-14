@@ -8,6 +8,8 @@
     <script src="functions.js"></script>
     <script src="lista.js"></script>
     <script src="pagePokes.js"></script>
+    <script src="try.js"></script>
+    <script src="getPokemons.js"></script>
     <link rel="icon" type="image/png" href="imgs/pokeball.png">
     <title>PokeDex</title>
 </head>
@@ -19,7 +21,7 @@
         <section>
             <input type="text" name="pesquisa" id="ipesquisa" class="barra-pesquisa">
             <div class="txt-help"><p>Pesquise pelo nome ou digite um número de 1 a 898.</p></div>
-            <input type="button" value="Pesquisar" class="botao-pesquisa" onclick="search()">
+            <input type="button" value="Pesquisar" class="botao-pesquisa" onclick="tente()">
             <div id="retorno"></div>
             <div class="pokemon">
                 <div class="bulbasaur" id="div-pokemons">
@@ -34,8 +36,5 @@
             </div>
         </section>
     </main>
-    <script>
-        lista()
-    </script>
 </body>
 </html>
