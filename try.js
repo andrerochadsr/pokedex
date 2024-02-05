@@ -1,10 +1,11 @@
 async function tente() {
     const idNome = document.getElementById('ipesquisa').value
-    try {
-        const url = `https://pokeapi.co/api/v2/pokemon/${idNome}`;
-        localStorage.setItem('Poke', idNome)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${idNome}`)
+    if (response['ok'] === true) {
+        localStorage.setItem('Poke', idNome);
         window.location.href = `pokemon.html`;
-    } catch {
+    } else {
         retorno.innerText = 'ERRO! Nome ou ID incorretos.'
     }
+
 }
